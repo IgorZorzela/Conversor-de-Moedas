@@ -11,7 +11,7 @@ public class ConversorDeMoedas {
         String[] opcoes = {"Real para Dólar", "Real para Euro", "Real para Libra",
                         "Dolár para Real", "Dólar para Euro", "Dólar para Libra",
                         "Euro para Real", "Euro para Libra", "Euro para Dólar",
-                        "Libra para Euro", "Libra para Real", "Libra para Real"};
+                        "Libra para Euro", "Libra para Dólar", "Libra para Real"};
 
         boolean continuar = true;
 
@@ -31,31 +31,78 @@ public class ConversorDeMoedas {
                     String simbolo = "";
 
                     switch (escolha) {
+                        case "Real para Dólar" -> {
+                            valorMoeda = 0.94;
+                            simbolo = "€";
+                            break;
+                        }
+
+                        case "Real para Euro" -> {
+                            valorMoeda = 0.94;
+                            simbolo = "€";
+                            break;
+                        }
+                        
+                        case "Real para Libra" -> {
+                            valorMoeda = 0.94;
+                            simbolo = "€";
+                            break;
+                        }
+                        
+                        case "Dolár para Real" -> {
+                            valorMoeda = 0.94;
+                            simbolo = "€";
+                            break;
+                        }
+                        
                         case "Dólar para Euro" -> {
                             valorMoeda = 0.94;
                             simbolo = "€";
                             break;
                         }
-                        case "Dólar para Real" -> {
-                            valorMoeda = 5.22;
-                            simbolo = "R$";
-                        }
-                        case "Euro para Dólar" -> {
-                            valorMoeda = 1.07;
-                            simbolo = "$";
-                        }
-                        case "Euro para Real" -> {
-                            valorMoeda = 5.56;
-                            simbolo = "R$";
-                        }
-                        case "Real para Dólar" -> {
-                            valorMoeda = 0.19;
-                            simbolo = "$";
-                        }
-                        case "Real para Euro" -> {
-                            valorMoeda = 0.18;
+                        
+                        case "Dólar para Libra" -> {
+                            valorMoeda = 0.94;
                             simbolo = "€";
+                            break;
                         }
+                        
+                        case "Euro para Real" -> {
+                            valorMoeda = 0.94;
+                            simbolo = "€";
+                            break;
+                        }
+                        
+                        case "Euro para Libra" -> {
+                            valorMoeda = 0.94;
+                            simbolo = "€";
+                            break;
+                        }
+                        
+                        case "Euro para Dólar" -> {
+                            valorMoeda = 0.94;
+                            simbolo = "€";
+                            break;
+                        }
+
+                        case "Libra para Euro" -> {
+                            valorMoeda = 0.94;
+                            simbolo = "€";
+                             break;
+                        }  
+                        
+                        case "Libra para Dólar" -> {
+                            valorMoeda = 0.94;
+                            simbolo = "€";
+                             break;
+                        }
+                        
+                        case "Libra para Real" -> {
+                            valorMoeda = 0.94;
+                            simbolo = "€";
+                            break;
+                        }                                                                                         
+                        
                     }
                     DecimalFormat df = new DecimalFormat("0.00");
 
