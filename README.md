@@ -1,18 +1,57 @@
-## Getting Started
+# Challenge ONE
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+<h1>
+    Challenge ONE - Alura Oracle
+</h1>
+<h2>
+  📦 Conversor de Moedas
+</h2>
 
-## Folder Structure
+# 📝Sobre
 
-The workspace contains two folders by default, where:
+ Uma aplicação onde é possivel converter moedas. 
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 📝Funcionalidades
+- Converter de Real para Dólar,
+- Converter de Real para Euro, 
+- Converter de Real para Libra,
+- Converter de Dolár para Real,
+- Converter de Dólar para Euro, 
+- Converter de Dólar para Libra,
+- Converter de Euro para Real, 
+- Converter de Euro para Libra, 
+- Converter de Euro para Dólar,
+- Converter de Libra para Euro,
+- Converter de Libra para Dólar, 
+- Converter de Libra para Real.
+- OBS: os valores podem estar desatualizados, pois foram utilizados valores referente ao dia 13/03/2023
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+---
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## 🚀Tecnologias utilizadas
 
-## Dependency Management
+Este projeto foi desenvolvido utilizando as seguintes tecnologias
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- Java 11
+- Java Swing
+
+---
+
+## 📦Como baixar o projeto
+
+```bash
+# Clonar o repositório
+$ git clone https://github.com/IgorZorzela/attornatus-api
+# Importar na sua IDE 
+# Baixar as Dependencias(pode demorar um pouco)
+# Iniciar o projeto
+```
+
+---
+
+🔥Desenvolvido por Igor Zorzela
+Conversor de Moedas
+© 2023 GitHub, Inc.
+Terms
+Privacy
+Security
