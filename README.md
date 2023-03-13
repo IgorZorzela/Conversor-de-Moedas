@@ -37,14 +37,13 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias
 
 ---
 
-## 📦Como baixar o projeto
+## 📦Como baixar e executar o projeto
 
 ```bash
 # Clonar o repositório
-$ git clone https://github.com/IgorZorzela/attornatus-api
+$ git clone https://github.com/IgorZorzela/Conversor-de-Moedas.git
 # Importar na sua IDE 
-# Baixar as Dependencias(pode demorar um pouco)
-# Iniciar o projeto
+# Iniciar a aplicação
 ```
 
 ---
