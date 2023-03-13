@@ -32,74 +32,74 @@ public class ConversorDeMoedas {
 
                     switch (escolha) {
                         case "Real para Dólar" -> {
-                            valorMoeda = 0.94;
-                            simbolo = "€";
+                            valorMoeda = 0.19;
+                            simbolo = "$";
                             break;
                         }
 
                         case "Real para Euro" -> {
-                            valorMoeda = 0.94;
+                            valorMoeda = 0.18;
                             simbolo = "€";
                             break;
                         }
                         
                         case "Real para Libra" -> {
-                            valorMoeda = 0.94;
-                            simbolo = "€";
+                            valorMoeda = 0.16;
+                            simbolo = "£";
                             break;
                         }
                         
                         case "Dolár para Real" -> {
-                            valorMoeda = 0.94;
-                            simbolo = "€";
+                            valorMoeda = 5.24;
+                            simbolo = "R$";
                             break;
                         }
                         
                         case "Dólar para Euro" -> {
-                            valorMoeda = 0.94;
+                            valorMoeda = 0.93;
                             simbolo = "€";
                             break;
                         }
                         
                         case "Dólar para Libra" -> {
-                            valorMoeda = 0.94;
-                            simbolo = "€";
+                            valorMoeda = 0.82;
+                            simbolo = "£";
                             break;
                         }
                         
                         case "Euro para Real" -> {
-                            valorMoeda = 0.94;
-                            simbolo = "€";
+                            valorMoeda = 5.63;
+                            simbolo = "R$";
                             break;
                         }
                         
                         case "Euro para Libra" -> {
-                            valorMoeda = 0.94;
-                            simbolo = "€";
+                            valorMoeda = 0.88;
+                            simbolo = "£";
                             break;
                         }
                         
                         case "Euro para Dólar" -> {
-                            valorMoeda = 0.94;
-                            simbolo = "€";
+                            valorMoeda = 1.07;
+                            simbolo = "$";
                             break;
                         }
 
                         case "Libra para Euro" -> {
-                            valorMoeda = 0.94;
+                            valorMoeda = 1.13;
                             simbolo = "€";
                              break;
                         }  
                         
                         case "Libra para Dólar" -> {
-                            valorMoeda = 0.94;
-                            simbolo = "€";
+                            valorMoeda = 1.21;
+                            simbolo = "$";
                              break;
                         }
                         
                         case "Libra para Real" -> {
-                            valorMoeda = 0.94;
-                            simbolo = "€";
+                            valorMoeda = 6.37;
+                            simbolo = "R$";
                             break;
                         }                                                                                         
                         
