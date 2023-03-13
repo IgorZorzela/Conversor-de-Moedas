@@ -1,83 +1,80 @@
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Scanner;
+import java.text.DecimalFormat;
+
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 public class ConversorDeMoedas {
 
     public static void main(String[] args) {
-        Object[] opcoes = {"Real para Dólar Americano", "Real para Euro","Real para Libra Esterlina", "Dólar Americano para Real", "Euro para Real", "Libra Esterlina para Real"};
 
-        //mostra as opçoes de converção
-        Object sel = JOptionPane.showInputDialog(null, "Escolha uma opção", "Menu", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
+        //opções de converção
+        String[] opcoes = {"Real para Dólar", "Real para Euro", "Real para Libra",
+                        "Dolár para Real", "Dólar para Euro", "Dólar para Libra",
+                        "Euro para Real", "Euro para Libra", "Euro para Dólar",
+                        "Libra para Euro", "Libra para Real", "Libra para Real"};
 
-        if (sel == null) {
-            System.out.println("Operação Cancelada!");
-            return;
+        boolean continuar = true;
+
+        while(continuar){
+            String escolha = (String) JOptionPane.showInputDialog(null, "Esolha uma opção", "Conversor de moedas",
+                    JOptionPane.QUESTION_MESSAGE, null,
+                    opcoes,
+                    opcoes);
+
+            if(escolha != null){
+                String valor = JOptionPane.showInputDialog(null, "Digite o valor que deseja converter:", "Conversor de moedas", JOptionPane.PLAIN_MESSAGE);
+
+                if(valor != null && !valor.isEmpty()){
+                    double resultado = Double.parseDouble(valor);
+
+                    double valorMoeda = 0.0;
+                    String simbolo = "";
+
+                    switch (escolha) {
+                        case "Dólar para Euro" -> {
+                            valorMoeda = 0.94;
+                            simbolo = "€";
+                            break;
+                        }
+                        case "Dólar para Real" -> {
+                            valorMoeda = 5.22;
+                            simbolo = "R$";
+                        }
+                        case "Euro para Dólar" -> {
+                            valorMoeda = 1.07;
+                            simbolo = "$";
+                        }
+                        case "Euro para Real" -> {
+                            valorMoeda = 5.56;
+                            simbolo = "R$";
+                        }
+                        case "Real para Dólar" -> {
+                            valorMoeda = 0.19;
+                            simbolo = "$";
+                        }
+                        case "Real para Euro" -> {
+                            valorMoeda = 0.18;
+                            simbolo = "€";
+                        }
+                    }
+                    DecimalFormat df = new DecimalFormat("0.00");
+
+                    double valorFinal = (resultado * valorMoeda);
+                    JOptionPane.showMessageDialog(null, "O valor da conversão é de " + simbolo + (df.format(valorFinal)), "Conversor de moedas", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Valor inválido", "Conversor de moedas", JOptionPane.ERROR_MESSAGE);
+            }
+
+            JDialog.setDefaultLookAndFeelDecorated(true);
+            int resposta = JOptionPane.showConfirmDialog(null, "Deseja continuar?", "Confirmação",
+                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+            if (resposta == JOptionPane.NO_OPTION) {
+                continuar = false;
+            } else if (resposta == JOptionPane.CLOSED_OPTION) {
+                continuar = false;
+            }
         }
-
-        String moedaOrigem, moedaDestino;
-
-        switch (sel.toString()) {
-            case "Real para Dólar Americano":
-                moedaOrigem = "BRL";
-                moedaDestino = "USD";
-                break;
-            case "Real para Euro":
-                moedaOrigem = "BRL";
-                moedaDestino = "EUR";
-                break;
-            case "Real para Libra Esterlina":
-                moedaOrigem = "BRL";
-                moedaDestino = "GBP";
-                break;
-            case "Dólar Americano para Real":
-                moedaOrigem = "USD";
-                moedaDestino = "BRL";
-                break;
-            case "Euro para Real":
-                moedaOrigem = "EUR";
-                moedaDestino = "BRL";
-                break;
-            case "Libra Esterlina para Real":
-                moedaOrigem = "GBP";
-                moedaDestino = "BRL";
-                break;
-            default:
-                System.out.println("Opção Inválida!");
-                return;
-        }
-
-        double valor = Double.parseDouble(JOptionPane.showInputDialog(null, "Insira um valor em "+moedaOrigem));
-
-        BigDecimal b = BigDecimal.valueOf(valor);
-
-        String apiKey = "5073248996ad447f9f9b69a17b7a185f";
-
-        BigDecimal resultado = converterMoedas(apiKey, moedaOrigem, moedaDestino, b);
-
-        JOptionPane.showMessageDialog(null, "O resultado da conversão é: " + resultado.setScale(2, RoundingMode.HALF_UP) + " "+moedaDestino, "Resultado", JOptionPane.INFORMATION_MESSAGE);
-    }
-
-    private static BigDecimal converterMoedas(String apiKey, String moedaOrigem, String moedaDestino, BigDecimal valor) {
-        BigDecimal resultado = null;
-        try {
-            URL url = new URL("https://openexchangerates.org/api/convert/" + valor + "/" + moedaOrigem + "/" + moedaDestino + "?app_id=" + apiKey);
-            HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
-            conexao.setRequestMethod("GET");
-
-            Scanner scanner = new Scanner(conexao.getInputStream());
-            String resposta = scanner.useDelimiter("\\A").nextLine();
-
-            resultado = new BigDecimal(resposta);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Erro na conexão com API de conversão de moedas!");
-        }
-
-        return resultado;
     }
 }
